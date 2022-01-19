@@ -1,29 +1,27 @@
+Time = 0
+Pause = 0
+
 def on_button_pressed_a():
-    global Пауза
-    if Пауза == 0:
-        Пауза = 1
+    global Pause
+    if Pause == 0:
+        Pause = 1
     else:
-        Пауза = 0
+        Pause = 0
 input.on_button_pressed(Button.A, on_button_pressed_a)
 
 def on_button_pressed_b():
-    global Время, Пауза
-    Время = 0
-    Пауза = 0
+    global Time, Pause
+    Time = 0
+    Pause = 0
 input.on_button_pressed(Button.B, on_button_pressed_b)
 
-Время = 0
-Пауза = 0
-Пауза = 0
-Время = 0
-
 def on_forever():
-    global Время
-    if Пауза == 1:
-        Время += 1
+    global Time
+    if Pause == 1:
+        Time += 1
         basic.pause(1000)
 basic.forever(on_forever)
 
 def on_forever2():
-    basic.show_number(Время)
+    basic.show_number(Time)
 basic.forever(on_forever2)
